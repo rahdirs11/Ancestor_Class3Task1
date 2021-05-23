@@ -26,15 +26,12 @@
             font-style: italic;
         }
 
-        
-
         .great-grand-father:hover > .grand-father{
             display: block;
             background-color: #007FFF;
             font-style: italic;
             margin-top: 20px
         }
-
 
         .great-grand-father > .grand-father {
             margin-left: 20px;
@@ -60,7 +57,6 @@
             content: "Grandfather";
         }
 
-
         .father > div, .uncle > div {
             margin-left: 20px;
             display: none;
@@ -79,6 +75,11 @@
 
         .uncle::before {
             content: "Uncle";
+        }
+
+        .great-grand-father::first-letter, .grand-father::first-letter, .father::first-letter, .uncle::first-letter, .cousin::first-letter, .you::first-letter, .brother::first-letter, .sister::first-letter {
+            text-transform: lowercase;
+            font-size: 35px;
         }
 
         h1 {

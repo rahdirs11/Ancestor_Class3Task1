@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancestor Tree - Selectors, Specificity, and Inheritance</title>
+    <style>
+        * {
+            font-weight: bold;
+            color: white;
+        }        
+
+        div {
+            padding: 15px 40px; 
+            border-radius: 50px;
+            margin-bottom: 15px;
+        }
+
+        .great-grand-father {
+            background-color: gray;
+        }
+
+        .great-grand-father::before {
+            content: "Great Grandfather";
+            font-style: italic;
+        }
+
+        
+
+        .great-grand-father:hover > .grand-father{
+            display: block;
+            background-color: #007FFF;
+            font-style: italic;
+            margin-top: 20px
+        }
+
+
+        .great-grand-father > .grand-father {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .grand-father > div {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            display: none;            
+        }
+
+        .grand-father:hover > div{
+            display: block;
+            background-color: #7FFFD4;
+            color: black;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        .grand-father::before {
+            content: "Grandfather";
+        }
+
+
+        .father > div, .uncle > div {
+            margin-left: 20px;
+            display: none;
+        }
+
+        .father:hover > div, .uncle:hover > div{
+            display: block;
+            background-color: #00308F;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        .father::before {
+            content: "Father";            
+        }
+
+        .uncle::before {
+            content: "Uncle";
+        }
+
+        h1 {
+            text-align: right;
+            width: 75%;
+            padding: 25px;
+            border-radius: 0px 50px 50px 0px;
+            background-color: #0039a6;            
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task</h1>
+    <div class="great-grand-father">
+        <div class="grand-father">
+            <div class="father">
+                <div class="you">Sridhar N S</div>
+                <div class="brother">Brother</div>
+                <div class="sister">Sister</div>
+            </div>
+            <div class="uncle">
+                <div class="cousin">Cousin 1</div>
+                <div class="cousin">Cousin 2</div>
+                <div class="cousin">Cousin 3</div>
+            </div>
+        </div>
+        <div class="grand-father">
+            <div class="uncle">
+                <div class="cousin">Cousin 4</div>
+                <div class="cousin">Cousin 5</div>
+                <div class="cousin">Cousin 6</div>
+            </div>
+            <div class="uncle">
+                <div class="cousin">Cousin 7</div>
+                <div class="cousin">Cousin 8</div>
+                <div class="cousin">Cousin 9</div>
+            </div>
+            <div class="uncle">
+                <div class="cousin">Cousin 10</div>
+                <div class="cousin">Cousin 11</div>
+                <div class="cousin">Cousin 12</div>
+            </div>
+        </div>
+        <div class="grand-father">
+            <div class="uncle">
+                <div class="cousin">Cousin 13</div>
+                <div class="cousin">Cousin 14</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
